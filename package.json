@@ -1,0 +1,27 @@
+{
+  "name": "@chat-app/root",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Simple chat application",
+  "main": "index.js",
+  "scripts": {
+    "test": "yarn workspace @chat-app/nestjs-app test",
+    "build:app": "yarn workspace @chat-app/react-app build",
+    "build:api": "yarn workspace @chat-app/nestjs-app build",
+    "start:app": "yarn workspace @chat-app/react-app start",
+    "start:api:dev": "yarn workspace @chat-app/nestjs-app start:dev",
+    "start:api:prod": "yarn workspace @chat-app/nestjs-app start:prod"
+  },
+  "workspaces": {
+    "packages": [
+      "workspaces/*"
+    ],
+    "nohoist": [
+      "workspaces/**/webpack-dev-server",
+      "**/babel-loader",
+      "**/babel-jest"
+    ]
+  },
+  "author": "Danil Kuchmenko",
+  "license": "ISC"
+}

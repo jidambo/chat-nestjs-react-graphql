@@ -1,0 +1,15 @@
+mutation CreateChat($owner: String!, $title: String!) {
+  createChat(
+    input: {
+        owner: $owner,
+        title: $title
+    }
+  ){
+    id,
+    owner,
+    title,
+    participants{
+    userId
+    }
+  }
+}

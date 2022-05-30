@@ -1,0 +1,8 @@
+mutation JoinChat($userId: String!, $chatId: String!) {
+  joinChat(
+    input: {
+      userId: $userId,
+      chatId: $chatId
+    }
+  )
+}

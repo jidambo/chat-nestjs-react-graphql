@@ -1,0 +1,70 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Relationships {
+  chatId: String!
+  userId: String!
+}
+
+type Chat {
+  id: ID!
+  title: String!
+  owner: String!
+  createdAt: DateTime!
+  participants: [Relationships!]!
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+type Message {
+  text: String!
+  chatId: String!
+  userId: String!
+  type: Int
+  createdAt: DateTime!
+}
+
+type Query {
+  """get all chats"""
+  getChats: [Chat!]!
+  message(chatId: String!): [Message!]!
+}
+
+type Mutation {
+  """create a new chat"""
+  createChat(input: CreateChatInput!): Chat!
+
+  """enter the chat"""
+  joinChat(input: RelationshipsInput!): Boolean!
+
+  """leave the chat"""
+  leaveChat(input: RelationshipsInput!): Boolean!
+  createMessage(createMessageInput: CreateMessageInput!): Message!
+}
+
+input CreateChatInput {
+  title: String!
+  owner: String!
+}
+
+input RelationshipsInput {
+  chatId: String!
+  userId: String!
+}
+
+input CreateMessageInput {
+  text: String!
+  chatId: String!
+  userId: String!
+  type: Float
+}
+
+type Subscription {
+  chatAdded: Chat!
+  chatUpdated: Chat!
+  messageAdded(chatId: String!, userId: String!): Message!
+}

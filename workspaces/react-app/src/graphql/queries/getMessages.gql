@@ -1,0 +1,11 @@
+query GetMessage($chatId: String!) {
+  message(
+  	chatId: $chatId
+  ) {
+    chatId,
+    userId,
+    text,
+    type,
+    createdAt
+  }
+}

@@ -1,0 +1,10 @@
+subscription chatAdded {
+  chatAdded {
+    id,
+    title,
+    owner,
+    participants {
+      userId
+    }
+  }
+}

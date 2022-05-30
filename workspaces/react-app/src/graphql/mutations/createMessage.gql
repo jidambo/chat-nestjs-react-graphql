@@ -1,0 +1,16 @@
+mutation CreateMessage($text: String!, $chatId: String!, $userId: String!) {
+  createMessage(
+    createMessageInput: {
+        text: $text,
+        chatId: $chatId,
+        userId: $userId,
+        type: 0
+    }
+  ){
+    userId,
+    chatId,
+    text,
+    type,
+    createdAt
+  }
+}

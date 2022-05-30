@@ -1,0 +1,10 @@
+query GetChats {
+  getChats{
+    id,
+    title,
+    owner,
+    participants{
+      userId
+    }
+  }
+}
