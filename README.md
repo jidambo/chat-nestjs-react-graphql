@@ -30,5 +30,3 @@
 - [ ] Add database instead of using in memory
 
     Install `typeorm` and store data in the database (postgres/mongo or whatever you want)
-
-- [ ] Use [NX](https://nx.dev/) for creating monorepo instead of yarn workspaces
