@@ -6,7 +6,8 @@
 - `docker-compose`
 
 ## Installation
-`docker-compose up`
+- `docker-compose up`
+- open [localhost:3333](http://localhost:3333)
 
 
 ### TODO / Improvements
